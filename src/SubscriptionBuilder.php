@@ -75,7 +75,7 @@ class SubscriptionBuilder
      *
      * @var string|null
      */
-    protected $billing;
+    protected $billing = 'send_invoice';
 
     /**
      * Create a new subscription builder instance.
@@ -90,7 +90,6 @@ class SubscriptionBuilder
         $this->name = $name;
         $this->plan = $plan;
         $this->owner = $owner;
-        $this->billing = 'send_invoice';
     }
 
     /**
