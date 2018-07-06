@@ -76,6 +76,13 @@ class SubscriptionBuilder
      * @var string|null
      */
     protected $billing = 'send_invoice';
+    
+    /**
+     * The days_until_due value for the subscription.
+     *
+     * @var string|null
+     */
+    protected $daysUntilDue = 15;
 
     /**
      * Create a new subscription builder instance.
@@ -257,6 +264,7 @@ class SubscriptionBuilder
     {
         return array_filter([
             'billing' => $this->billing,
+            'days_until_due' => $this->daysUntilDue,
             'billing_cycle_anchor' => $this->billingCycleAnchor,
             'coupon' => $this->coupon,
             'metadata' => $this->metadata,
