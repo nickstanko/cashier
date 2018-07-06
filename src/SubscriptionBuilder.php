@@ -82,7 +82,7 @@ class SubscriptionBuilder
      *
      * @var string|null
      */
-    protected $daysUntilDue = 15;
+    protected $daysUntilDue = 30;
 
     /**
      * Create a new subscription builder instance.
