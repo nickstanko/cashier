@@ -69,6 +69,13 @@ class SubscriptionBuilder
      * @var array|null
      */
     protected $metadata;
+    
+    /**
+     * The billing for the subscription.
+     *
+     * @var string|null
+     */
+    protected $billing;
 
     /**
      * Create a new subscription builder instance.
@@ -83,6 +90,7 @@ class SubscriptionBuilder
         $this->name = $name;
         $this->plan = $plan;
         $this->owner = $owner;
+        $this->billing = 'send_invoice';
     }
 
     /**
@@ -249,6 +257,7 @@ class SubscriptionBuilder
     protected function buildPayload()
     {
         return array_filter([
+            'billing' => $this->billing,
             'billing_cycle_anchor' => $this->billingCycleAnchor,
             'coupon' => $this->coupon,
             'metadata' => $this->metadata,
